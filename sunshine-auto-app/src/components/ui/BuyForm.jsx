@@ -194,7 +194,7 @@ export default function BuyForm({ vehicle, onClose }) {
     <form onSubmit={handleSubmit} className="buy-form">
       <h2>Оформление покупки</h2>
       <p className="vehicle-info">
-        {vehicle.name} - {vehicle.price.toLocaleString()}
+        {vehicle.name} - {vehicle.price.toLocaleString()} $
       </p>
 
       <div className="form-group">
