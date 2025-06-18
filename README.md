@@ -1,160 +1,175 @@
-# 🚗 ProjectRule: Car Dealership Web App using PlayCanvas + React (respond only in Russian)
+# 🚗 Sunshine Auto - 3D Автосалон
 
-## 🧠 Role of the model:
+**Создано в рамках производственной практики в ПК "Советские роботы"** 🚀
 
-You are a **specialist** in developing interactive 3D web applications using **React** and the **PlayCanvas engine**.  
-Your role is to implement and support UI/UX, camera behavior, 3D rendering, and model interaction strictly following the official documentation.
+Веб-приложение автосалона с интерактивными 3D-моделями автомобилей, созданное с использованием React и PlayCanvas.
 
----
+## 🚀 Быстрый запуск
 
-## 🌐 Project Description:
+```bash
+cd sunshine-auto-app
+npm install
+npm run dev
+```
 
-This project is a **car dealership showcase website**, created with React and PlayCanvas.  
-Its purpose is to allow users to interactively view various vehicles in 3D and access detailed specifications and descriptions.
+Откройте браузер и перейдите по адресу `http://localhost:5173`
 
-### 🧩 Required features and layout:
+## 📋 Описание проекта
 
-1. **Main display**
-   - Centered 3D vehicle model rendered via PlayCanvas.
-   - Interactive camera control: users can rotate, zoom, and pan around the car model (except underneath).
-   - Smooth camera orbit controls; prevent flipping or going under the model.
+**Sunshine Auto** - это клиентское веб-приложение (Frontend), созданное в рамках производственной практики в организации **ПК "Советские роботы"**. 
 
-2. **Left-side panel**
-   - Static or scrollable panel showing textual **vehicle description**.
-   - React component that updates dynamically based on selected vehicle.
+Приложение представляет собой интерактивный 3D-автосалон, где пользователи могут:
+- Просматривать детализированные 3D-модели автомобилей
+- Изучать технические характеристики
+- Взаимодействовать с моделями через камеру
+- Изменять цвет автомобилей
+- Оформлять заявки на покупку
 
-3. **Right-side panel**
-   - Displays **vehicle specifications**: speed, armor, weight, etc.
-   - Structured in tabular or card format using PCUI or custom React layout.
+## 🌐 Живое демо
 
-4. **Bottom section**
-   - Central block with the **vehicle's name**.
-   - Left and right **arrow buttons** on each side of the name to switch between available vehicles.
-   - Buttons must update all other UI sections and 3D model when clicked.
+**Посетите запущенное приложение:** [Sunshine Auto App](https://medvedev-anton.github.io/Sunshine-Auto-App/)
 
-5. **Performance**
-   - All model switching must be performant (loading + unloading of 3D assets via PlayCanvas engine).
-   - Lazy-loading or preloading strategies should be implemented where necessary.
+## ✨ Возможности приложения
 
----
+### 🚗 Основной функционал
 
-## 📚 Required Documentation (use only these):
+1. **Выбор модели автомобиля из списка**
+   - Галерея из 6 премиальных автомобилей
+   - Удобная навигация между моделями
+   - Визуальные миниатюры для каждого автомобиля
 
-Use strictly the following sources:
+2. **Просмотр характеристик модели автомобиля**
+   - Детальные технические спецификации
+   - Показатели производительности (скорость, ускорение, торможение, управляемость)
+   - Информация о топливном баке
+   - Ценовая информация
 
-- [PlayCanvas Engine API Reference](https://api.playcanvas.com)
-- [PlayCanvas React Documentation](https://playcanvas-react.vercel.app/docs)
-- [PlayCanvas React GitHub](https://github.com/playcanvas/react)
-- [PlayCanvas Declarative 3D Blog](https://blog.playcanvas.com/declarative-3d-with-playcanvas-react/)
-- [PCUI React Components](https://developer.playcanvas.com/user-manual/pcui/react/)
+3. **3D визуализация модели автомобиля**
+   - Интерактивное вращение камеры вокруг автомобиля
+   - Возможность приближения и отдаления
+   - Ограничения камеры для предотвращения переворота
+   - Реалистичное освещение и тени
 
----
+4. **Изменение цвета модели автомобиля**
+   - Интерактивный слайдер для выбора цвета
+   - Мгновенное применение изменений к 3D-модели
+   - Широкий спектр доступных цветов
 
-## 🚫 Restrictions:
+5. **Модальное окно с формой покупки**
+   - Удобная форма для оформления заявки
+   - Валидация введенных данных
+   - Сообщение об успешной отправке
 
-- Do not use any APIs or components not mentioned in the above documentation.
-- Do not fabricate logic or controls — adhere to supported features only.
-- If a feature cannot be implemented per documentation, explicitly state that.
+6. **Адаптивный интерфейс**
+   - Полная адаптация под различные размеры экранов
+   - Оптимизированный интерфейс для мобильных устройств
+   - Интуитивная навигация на всех платформах
 
----
+### 🎮 Дополнительные возможности
 
-## ✨ Output style:
+- **Оптимизированная загрузка ресурсов** - кэширование 3D-моделей для быстрой работы
+- **Предустановленные ракурсы камеры** - быстрый доступ к лучшим видам автомобиля
+- **Реалистичное окружение** - профессиональная студийная среда для демонстрации
+- **Плавные анимации** - качественные переходы между состояниями
 
-- **Always respond in Russian**, no matter what language the input is.
-- Output must include clear and correct React + PlayCanvas code examples with brief Russian explanations.
-- Prioritize performance, reactivity, and clean modular component design.
-- Include links to documentation when appropriate.
+## 🛠️ Технологический стек
 
----
+- **React 19** - современный UI фреймворк
+- **PlayCanvas** - мощный 3D движок
+- **@playcanvas/react** - интеграция React с PlayCanvas
+- **Vite** - быстрый инструмент сборки
+- **CSS3** - стилизация и адаптивный дизайн
 
-# 🚀 Mission: Build a responsive and interactive car showcase site in PlayCanvas + React — and explain it all in Russian.
+## 🚗 Доступные автомобили
 
-# Sunshine Auto App
+В приложении представлены следующие модели:
 
-A 3D car showroom application built with React and PlayCanvas, featuring interactive 3D vehicle models with realistic lighting and physics.
+1. **BMW M8 Coupe** (2020) - Спортивный купе
+2. **Mercedes-Benz G-Class AMG G63** (2020) - Роскошный внедорожник
+3. **RAM 1500 TRX** (2021) - Мощный пикап
+4. **Lamborghini Urus Performante** (2023) - Спортивный SUV
+5. **Porsche 718 Cayman GTS** (2018) - Спортивный автомобиль
+6. **Nissan Skyline R35** - Легендарный спорткар
 
-## 🚗 Features
+## 📚 Источники 3D моделей
 
-- Interactive 3D vehicle models
-- Realistic lighting and shadows
-- Vehicle selection interface
-- Responsive design
-- Modern UI with Tailwind CSS
+Все 3D модели автомобилей были получены бесплатно с платформы Sketchfab:
 
-## 🛠️ Tech Stack
+- [BMW M8 Coupe](https://sketchfab.com/3d-models/2020-bmw-m8-coupe-f69bc7c528804552b2ff032d7c1e9fb4)
+- [Mercedes-Benz G-Class AMG G63](https://sketchfab.com/3d-models/2020-mercedes-benz-g-class-amg-g63-52296f1a65d54a85a2ed7cb67604e554)
+- [RAM 1500 TRX](https://sketchfab.com/3d-models/2021-ram-1500-trx-4fad9badee2449b9a5addadc11c3f4e1)
+- [Lamborghini Urus Performante](https://sketchfab.com/3d-models/2023-lamborghini-urus-performante-23dd7730fc244eba997cf60afa70177e)
+- [Porsche 718 Cayman GTS](https://sketchfab.com/3d-models/2018-porsche-718-cayman-gts-24539871bfa54ea2888aca3d1f6cd1f0)
+- [Nissan Skyline R35](https://sketchfab.com/3d-models/nissan-skyline-r35-gtr-nismo-free-b2f9f4aa2c7b4cd9a71471641a2dcace)
 
-- **React 19** - UI framework
-- **PlayCanvas** - 3D engine
-- **@playcanvas/react** - React integration for PlayCanvas
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
+## 🚀 Установка и запуск
 
-## 🚀 Live Demo
+### Предварительные требования
 
-Visit the live application: [Sunshine Auto App](https://medvedev-anton.github.io/Sunshine-Auto-App/)
+- Node.js (версия 18 или выше)
+- npm или yarn
 
-## 📦 Installation
+### Пошаговая установка
 
-1. Clone the repository:
+1. **Клонирование репозитория:**
 ```bash
 git clone https://github.com/Medvedev-Anton/Sunshine-Auto-App.git
 cd Sunshine-Auto-App
 ```
 
-2. Navigate to the app directory:
+2. **Переход в директорию приложения:**
 ```bash
 cd sunshine-auto-app
 ```
 
-3. Install dependencies:
+3. **Установка зависимостей:**
 ```bash
 npm install
 ```
 
-4. Start the development server:
+4. **Запуск в режиме разработки:**
 ```bash
 npm run dev
 ```
 
-5. Open your browser and visit `http://localhost:5173`
+5. **Открытие в браузере:**
+Перейдите по адресу `http://localhost:5173`
 
-## 🏗️ Building for Production
+### Сборка для продакшена
 
 ```bash
 npm run build
 ```
 
-## 📁 Project Structure
+## 🎯 Особенности реализации
 
-```
-sunshine-auto-app/
-├── public/
-│   └── assets/
-│       ├── models/          # 3D vehicle models
-│       ├── environment-maps/ # Environment textures
-│       └── lib/             # External libraries
-├── src/
-│   ├── components/          # React components
-│   ├── data/               # Application data
-│   ├── hooks/              # Custom React hooks
-│   └── styles/             # CSS styles
-└── package.json
-```
+### Производительность
+- Оптимизированная загрузка 3D-моделей
+- Кэширование ресурсов для быстрого переключения
+- Адаптивная система качества рендеринга
 
-## 🤝 Contributing
+### Пользовательский опыт
+- Интуитивное управление камерой
+- Плавные переходы между состояниями
+- Отзывчивый интерфейс на всех устройствах
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Техническая архитектура
+- Модульная структура компонентов
+- Централизованное управление состоянием
+- Оптимизированная структура данных
 
-## 📄 License
+## 🔮 Планы развития
 
-This project is licensed under the MIT License.
+В будущих версиях планируется реализация:
+- **Тест-драйв** - интерактивная симуляция вождения (частично реализовано)
+- Дополнительные эффекты визуализации
+- Расширенная галерея автомобилей
+- Интеграция с CRM системами
 
-## 🙏 Acknowledgments
+## 🙏 Благодарности
 
-- PlayCanvas team for the amazing 3D engine
-- React team for the excellent UI framework
-- All contributors and supporters
+- **ПК "Советские роботы"** - за предоставленную возможность прохождения производственной практики
+- **PlayCanvas** - за мощный 3D движок
+- **React** - за отличный UI фреймворк
+- **Sketchfab** - за бесплатные 3D модели
+- Всем участникам и поддержавшим проект 
