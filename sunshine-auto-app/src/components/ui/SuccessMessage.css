@@ -1,0 +1,111 @@
+.success-message {
+  text-align: center;
+  padding: 2rem;
+  animation: slideIn 0.5s ease-out;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2.5rem;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.success-title {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.success-text {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.charity-message {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid #e9ecef;
+}
+
+.charity-message h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.charity-message p {
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.charity-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.close-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-button:hover {
+  background: #45a049;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+} 

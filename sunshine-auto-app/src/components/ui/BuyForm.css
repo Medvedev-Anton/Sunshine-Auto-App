@@ -1,0 +1,143 @@
+.buy-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buy-form h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.vehicle-info {
+  text-align: center;
+  color: #ccc;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #fff;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+  padding: 12px;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-group input.error {
+  border-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+}
+
+.submit-error {
+  text-align: center;
+  color: #dc3545;
+  padding: 10px;
+  background: rgba(220, 53, 69, 0.1);
+  border-radius: 6px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.radio-label input[type="radio"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-button,
+.submit-button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.cancel-button {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: #ccc;
+}
+
+.cancel-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  flex: 1;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+} 

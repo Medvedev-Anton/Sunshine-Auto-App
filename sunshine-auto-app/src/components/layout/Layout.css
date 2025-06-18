@@ -1,0 +1,250 @@
+.layout {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #101215;
+  max-width: 100%;
+  max-height: 100vh;
+  transition: all var(--transition-layout);
+}
+
+/* Desktop Layout - 3 panels side by side */
+.layout-desktop {
+  --left-sidebar-width: 320px;
+  --right-sidebar-width: 360px;
+  transition: all var(--transition-layout);
+}
+
+.desktop-layout {
+  display: grid;
+  grid-template-columns: var(--left-sidebar-width) 1fr var(--right-sidebar-width);
+  height: 100vh;
+  width: 100%;
+  background-color: #1F2328;
+  max-width: 100%;
+  max-height: 100vh;
+  transition: all var(--transition-layout);
+}
+
+.desktop-layout .main-panel {
+  overflow: hidden;
+  position: relative;
+  background-color: #101215;
+  max-width: 100%;
+  max-height: 100vh;
+  transition: all var(--transition-layout);
+}
+
+/* Styles for sidebars */
+.desktop-layout > .sidebar-left,
+.desktop-layout > .sidebar-right {
+  background-color: #1F2328;
+  padding: 20px;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100vh;
+  transition: all var(--transition-layout);
+}
+
+.desktop-layout > .sidebar-right {
+  overflow: hidden !important;
+  height: 100vh;
+  width: var(--right-sidebar-width);
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+.desktop-layout > .sidebar-right .sidebar-content {
+  overflow: hidden !important;
+  max-height: 100vh;
+  height: 100%;
+  transition: all var(--transition-layout);
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow: visible;
+  padding: 0;
+  max-width: 100%;
+  max-height: 100vh;
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  border-bottom: none;
+}
+
+/* Tablet Layout - main panel with tabs in sidebar */
+.tablet-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  height: 100vh;
+  width: 100%;
+  background-color: #2A2F36;
+  max-width: 100%;
+  max-height: 100vh;
+  transition: all var(--transition-layout);
+}
+
+.tablet-layout .main-panel {
+  overflow: hidden;
+  position: relative;
+  background-color: #101215;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+.tablet-layout .side-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: #1F2328;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+/* Mobile Layout - single panel with tab navigation */
+.layout-mobile .panel-container {
+  flex: 1;
+  position: relative;
+  background-color: #1F2328;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+/* Common styles */
+.panel-container {
+  position: relative;
+  flex: 1;
+  background-color: #1F2328;
+  max-width: 100%;
+  max-height: 100vh;
+  border: none;
+  outline: none;
+}
+
+/* Transition animations for panel switching */
+.panel-container > div {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .layout-desktop {
+    --left-sidebar-width: 280px;
+    --right-sidebar-width: 300px;
+  }
+  .tablet-layout {
+    grid-template-columns: 1fr 280px;
+  }
+}
+
+@media (max-width: 900px) {
+  .layout-desktop {
+    --left-sidebar-width: 240px;
+    --right-sidebar-width: 260px;
+  }
+  .tablet-layout {
+    grid-template-columns: 1fr 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-desktop {
+    --left-sidebar-width: 0px;
+    --right-sidebar-width: 0px;
+  }
+  .tablet-layout {
+    grid-template-columns: 1fr 0px;
+  }
+  .sidebar, .sidebar-content {
+    padding: 6px !important;
+  }
+  .panel-container {
+    padding: 0 10px;
+  }
+}
+
+/* Test Drive Mode */
+.test-drive-instruction {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add transitions to all layout elements */
+.layout * {
+  transition: all 0.5s ease-out;
+}
+
+.layout .sidebar, 
+.layout .color-palette-container,
+.layout .main-panel,
+.layout .desktop-layout {
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out, width 0.5s ease-out, max-width 0.5s ease-out;
+}
+
+/* Test drive active - hide all UI elements */
+.test-drive-active .sidebar,
+.test-drive-active .color-palette-container {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.test-drive-active .sidebar-right {
+  transform: translateX(100%);
+}
+
+/* Make PlayCanvas scene fullscreen in test drive mode */
+.test-drive-active .main-panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.test-drive-active .desktop-layout {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional styles for test drive mode */
+.test-drive-panel {
+  width: 100% !important;
+  height: 100vh !important;
+  max-width: 100% !important;
+  max-height: 100vh !important;
+}
+
+.main-panel-fullscreen {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.test-drive-layout {
+  display: block !important;
+  width: 100% !important;
+  height: 100vh !important;
+} 

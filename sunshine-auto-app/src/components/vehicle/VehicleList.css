@@ -1,0 +1,84 @@
+.vehicle-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vehicle-list-item {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px;
+  border-radius: var(--radius-main);
+  background: var(--color-bg-panel);
+  box-shadow: 0 0 0 1px var(--color-border), 0 2px 8px 0 rgba(0,0,0,0.10) inset;
+  border: 0.5px solid transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background var(--transition-main), box-shadow var(--transition-main), border-color var(--transition-main), transform var(--transition-main);
+  backdrop-filter: blur(2.5px);
+  overflow: hidden;
+}
+
+.vehicle-list-item.selected {
+  background: linear-gradient(135deg, rgba(38,40,48,0.98) 60%, rgba(60,52,32,0.98) 100%);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 8px 36px 0 rgba(255,215,0,0.13), 0 2px 8px 0 rgba(255,255,255,0.08) inset;
+  transform: scale(1.035);
+  border-width: 0.5px;
+}
+
+.vehicle-list-item:hover {
+  background: linear-gradient(135deg, rgba(44,46,56,0.98) 60%, rgba(60,52,32,0.98) 100%);
+  box-shadow: 0 12px 48px 0 rgba(255,215,0,0.18), 0 2px 8px 0 rgba(255,255,255,0.10) inset;
+  border-color: var(--color-accent-gold);
+  transform: scale(1.025);
+}
+
+.vehicle-list-name {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1.35em;
+  color: var(--color-text-main);
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 8px rgba(255,255,255,0.08);
+  margin-bottom: 4px;
+}
+
+.vehicle-list-item.selected .vehicle-list-name {
+  color: var(--color-accent-gold);
+  text-shadow: 0 2px 12px rgba(255,215,0,0.18);
+}
+
+.vehicle-list-price {
+  font-size: 1.15em;
+  color: var(--color-accent-gold);
+  font-weight: 600;
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 6px rgba(255,255,255,0.06);
+}
+
+.vehicle-list-item.selected .vehicle-list-price {
+  color: var(--color-accent-gold);
+  text-shadow: 0 2px 10px rgba(255,215,0,0.13);
+}
+
+@media (max-width: 900px) {
+  .vehicle-list-item {
+    font-size: 0.95em;
+    padding: 8px 0;
+  }
+}
+@media (max-width: 600px) {
+  .vehicle-list-item {
+    font-size: 0.85em;
+    padding: 4px 0;
+  }
+} 

@@ -1,0 +1,164 @@
+/* Global box-sizing for consistent layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-bg-main: #101215;
+  --color-bg-panel: #1F2328;
+  --color-accent-gold: #FFD700;
+  --color-accent-red: #FF4757;
+  --color-text-main: #FFFFFF;
+  --color-text-secondary: #E0E0E0;
+  --color-text-tertiary: #A0A0A0;
+  --color-border: #2A2F36;
+  --color-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+  --radius-main: 18px;
+  --transition-main: 0.3s cubic-bezier(.4,0,.2,1);
+  --transition-layout: 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-bg-main);
+  color: var(--color-text-main);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-top: 0;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  font-weight: 500;
+  color: #FF4757;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #FF6B81;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+button {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #FF4757;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+button:hover {
+  background-color: #FF6B81;
+  border-color: #FF6B81;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add smooth transitions for layout changes */
+.layout *,
+.sidebar *,
+.vehicle-viewer-container *,
+.vehicle-specs-container *,
+.color-palette-container * {
+  transition: all var(--transition-layout);
+}
+
+/* Responsive breakpoints with smoother transitions */
+@media (max-width: 1200px) {
+  :root {
+    --radius-main: 14px;
+  }
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --radius-main: 10px;
+  }
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --radius-main: 7px;
+  }
+  body {
+    font-size: 13px;
+  }
+  .sidebar, .vehicle-specs-container, .vehicle-viewer-container {
+    padding: 10px !important;
+  }
+}
+
+/* Prevent layout shifts during transitions */
+.layout,
+.sidebar,
+.vehicle-viewer-container,
+.vehicle-specs-container,
+.color-palette-container {
+  will-change: transform, width, height, padding;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
