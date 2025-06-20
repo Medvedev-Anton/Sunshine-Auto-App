@@ -10,8 +10,7 @@ import { vehicles, getDefaultVehicle } from '../../data/vehiclesData';
 
 // Screen breakpoints
 const BREAKPOINTS = {
-  MOBILE: 768,
-  TABLET: 1200
+  MOBILE: 900 // теперь всё, что меньше 900 — мобильный режим
 };
 
 // Layout panels
@@ -34,8 +33,6 @@ export default function Layout() {
       const width = window.innerWidth;
       if (width < BREAKPOINTS.MOBILE) {
         setScreenSize('mobile');
-      } else if (width < BREAKPOINTS.TABLET) {
-        setScreenSize('tablet');
       } else {
         setScreenSize('desktop');
       }
@@ -114,40 +111,6 @@ export default function Layout() {
         </>
       )}
       
-      {/* Tablet layout - viewer with tabs for other panels */}
-      {screenSize === 'tablet' && !isTestDriveActive && (
-        <div className="tablet-layout">
-          <div className="main-panel">
-            <ContentArea 
-              type={PANELS.VIEWER} 
-              selectedVehicle={selectedVehicle}
-              testDriveActive={isTestDriveActive}  
-            />
-          </div>
-          <div className="side-panel">
-            <TabNavigation 
-              activePanel={activePanel} 
-              onSelectPanel={setActivePanel}
-              vertical={true}
-              excludeViewer={true}
-            />
-            <div className="panel-container">
-              {activePanel === PANELS.SELECTION && (
-                <ContentArea type={PANELS.SELECTION} selectedVehicle={selectedVehicle} onSelectVehicle={setSelectedVehicle} vehicles={vehicles} />
-              )}
-              {activePanel === PANELS.SPECS && (
-                <ContentArea 
-                  type={PANELS.SPECS} 
-                  selectedVehicle={selectedVehicle} 
-                  onStartTestDrive={handleStartTestDrive}
-                  onOpenBuyModal={() => setIsBuyModalOpen(true)}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-      
       {/* Desktop layout - all panels visible or test drive mode */}
       {screenSize === 'desktop' && (
         <div className={`desktop-layout ${isTestDriveActive ? 'test-drive-layout' : ''}`}>
@@ -173,8 +136,8 @@ export default function Layout() {
         </div>
       )}
 
-      {/* Mobile/tablet test drive mode - show only viewer */}
-      {(screenSize === 'mobile' || screenSize === 'tablet') && isTestDriveActive && (
+      {/* Mobile test drive mode - show only viewer */}
+      {screenSize === 'mobile' && isTestDriveActive && (
         <div className="panel-container test-drive-panel">
           <ContentArea 
             type={PANELS.VIEWER} 
