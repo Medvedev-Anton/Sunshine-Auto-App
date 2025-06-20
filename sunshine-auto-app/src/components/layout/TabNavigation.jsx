@@ -8,9 +8,9 @@ export default function TabNavigation({
   excludeViewer = false 
 }) {
   const tabs = [
-    { id: 'viewer', label: '3D View', icon: '🔍' },
-    { id: 'selection', label: 'Vehicles', icon: '🚗' },
-    { id: 'specs', label: 'Specs', icon: '📋' }
+    { id: 'viewer', label: '3D вид', icon: '🔍' },
+    { id: 'specs', label: 'Данные', icon: '📋' },
+    { id: 'selection', label: 'Авто', icon: '🚗' }
   ].filter(tab => !excludeViewer || tab.id !== 'viewer');
 
   return (
