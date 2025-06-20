@@ -49,7 +49,6 @@
 }
 
 .desktop-layout > .sidebar-right {
-  overflow: hidden !important;
   height: 100vh;
   width: var(--right-sidebar-width);
   box-sizing: border-box;
@@ -58,7 +57,6 @@
 }
 
 .desktop-layout > .sidebar-right .sidebar-content {
-  overflow: hidden !important;
   max-height: 100vh;
   height: 100%;
   transition: all var(--transition-layout);
@@ -74,6 +72,26 @@
   min-width: 0;
   box-sizing: border-box;
   border-bottom: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #FFD700 #23272e;
+}
+
+.sidebar-content::-webkit-scrollbar,
+.panel-container::-webkit-scrollbar {
+  width: 8px;
+  background: #23272e;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb,
+.panel-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #FFD700 40%, #ffb300 100%);
+  border-radius: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover,
+.panel-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(120deg, #ffb300 0%, #FFD700 100%);
 }
 
 /* Mobile Layout - single panel with tab navigation */
@@ -94,6 +112,9 @@
   max-height: 100vh;
   border: none;
   outline: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #FFD700 #23272e;
 }
 
 /* Transition animations for panel switching */

@@ -6,6 +6,8 @@
   position: relative;
   z-index: 10;
   transition: all var(--transition-layout);
+  scrollbar-width: thin;
+  scrollbar-color: #FFD700 #23272e;
 }
 
 .tab-navigation.horizontal {
@@ -105,6 +107,8 @@
   height: calc(100vh - 60px);
   overflow: hidden;
   transition: height var(--transition-layout);
+  scrollbar-width: thin;
+  scrollbar-color: #FFD700 #23272e;
 }
 
 .tab-content {
@@ -120,6 +124,8 @@
   -webkit-overflow-scrolling: touch;
   will-change: transform, opacity;
   transform: translateZ(0);
+  scrollbar-width: thin;
+  scrollbar-color: #FFD700 #23272e;
 }
 
 .tab-content.active {
@@ -192,4 +198,27 @@
   .tab-icon {
     font-size: 17px;
   }
+}
+
+.tab-navigation::-webkit-scrollbar,
+.tab-content::-webkit-scrollbar,
+.sidebar-content::-webkit-scrollbar,
+.panel-container::-webkit-scrollbar {
+  width: 8px;
+  background: #23272e;
+}
+
+.tab-navigation::-webkit-scrollbar-thumb,
+.tab-content::-webkit-scrollbar-thumb,
+.sidebar-content::-webkit-scrollbar-thumb,
+.panel-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #FFD700 40%, #ffb300 100%);
+  border-radius: 6px;
+}
+
+.tab-navigation::-webkit-scrollbar-thumb:hover,
+.tab-content::-webkit-scrollbar-thumb:hover,
+.sidebar-content::-webkit-scrollbar-thumb:hover,
+.panel-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(120deg, #ffb300 0%, #FFD700 100%);
 } 
